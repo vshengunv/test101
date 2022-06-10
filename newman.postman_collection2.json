@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "b9f1a50d-a53d-4903-9ef5-51681cbecb0a",
+		"name": "newman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18908582"
+	},
+	"item": [
+		{
+			"name": "高德地图天气API Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"console.log(responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restapi.amap.com/v3/weather/weatherInfo?city=天河区&key=2c7c00457d0e448c81ad712866f7b47f&extensions=all",
+					"protocol": "https",
+					"host": [
+						"restapi",
+						"amap",
+						"com"
+					],
+					"path": [
+						"v3",
+						"weather",
+						"weatherInfo"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "天河区"
+						},
+						{
+							"key": "key",
+							"value": "2c7c00457d0e448c81ad712866f7b47f"
+						},
+						{
+							"key": "extensions",
+							"value": "all"
+						}
+					]
+				},
+				"description": "高德地图天气预报的调用接口API：\n\n高德开放平台：\n\n[我的应用 | 高德控制台 (amap.com)](https://console.amap.com/dev/key/app)\n\n各个城市的编码：\n\n[相关下载-Web服务 API | 高德地图API (amap.com)](https://lbs.amap.com/api/webservice/download)\n\nStartFragment\n\nextensions=all\n\nEndFragment\n\n参数：extensions=all 表示预报未来三天的天气"
+			},
+			"response": []
+		}
+	]
+}
