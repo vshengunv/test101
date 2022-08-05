@@ -29,9 +29,10 @@ for i in range(5):
     cat.wait(0.5)
 
 # 2.弹球游戏
+def ballgame(self):
+    ball = Sprite(1)
+    while True:
+        ball.fd(0.1)
+        ball.bounce_on_edge()
 
-ball = Sprite(1)
 
-while True:
-    ball.fd(0.1)
-    ball.bounce_on_edge()
