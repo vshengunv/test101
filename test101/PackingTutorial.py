@@ -15,6 +15,9 @@ mian.py：要打包的文件
 
 
 
+
 if __name__ == '__main__':
+
     # TestMylog.print_log(webdriver.Chrome())
+
 

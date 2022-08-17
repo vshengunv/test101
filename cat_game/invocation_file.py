@@ -6,7 +6,7 @@ from  os.path import dirname,abspath
 project_path = dirname(dirname(abspath(__file__)))
 # dirname( )函数用于获取上级目录，所以当两个dirname( )嵌套时，得到的目录为该文件的路径
 # 将该路径与“\\module1”目录拼接，可得到该文件所属的目录，添加到path即可
-sys.path.append(project_path + "\\module")
+sys.path.append(project_path + "\\module")  #module 表示文件名
 
 
 def add(a=1,b=2):

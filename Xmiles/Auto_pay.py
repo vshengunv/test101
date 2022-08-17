@@ -2,6 +2,7 @@ import re
 import time
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import getpass
 
@@ -86,9 +87,13 @@ class TestPay():
         # driver.switch_to.default_content()
         # 输入产品prdid
         time.sleep(3)
-        driver.find_element(By.XPATH, "//div//span//input[@id='search_form_prdId']").send_keys("777888")
+        driver.find_element(By.XPATH, "//div//span//input[@id='search_form_prdId']").send_keys("777889")
+        driver.find_element(By.XPATH, "//div//span//input[@id='search_form_prdId']").send_keys(Keys.ENTER)
         time.sleep(1)
-        driver.find_element(By.ID, 'search_form_prdId').submit()
+        driver.find_element(By.ID,"search_form_transferStatus").click()
+        driver.find_element(By.ID, "search_form_transferStatus").send_keys(Keys.ENTER)
+        # driver.find_element(By.ID, 'search_form_prdId').submit()
+        # time.sleep(1)
         # 查询该产品
         driver.find_element(By.XPATH, "//span[text()='查 询']").click()
         time.sleep(1)
@@ -117,6 +122,8 @@ class TestPay():
                                                            "/html/body/div[1]/section/section/main/div[2]/div/div/div/div/div[2]/div/div[3]/div/div/div/div[2]/div/div[2]/button[2]/span")
                 driver.execute_script("arguments[0].click()", test_element_Confirm)
                 time.sleep(2)
+                driver.find_element(By.XPATH, "//span[text()='查 询']").click()
+                time.sleep(1)
                 # 打印是第几遍打款
                 print("第{}遍".format(i + 1))
                 if i == 9:

@@ -84,10 +84,28 @@ except TimeoutError:
 .class      	     .intro         	class选择器，选择class="intro"的所有元素
 #id     	          #firstname	    id选择器，选择id="firstname"的所有元素
 *                  	*	                选择所有元素
-element         	p	                元素所有元素
+element         	p	                选择所有标签为<p><p/>元素
 element>element 	div>input	        选择父元素为<div>的所有<input>元素
 element+element	    div+input	        选择同一级中紧接在<div>元素之后的所有<input>元素
 [attribute=value]	[target=_blank]	    选择target="_blank"的所有元素。
+
+常见语法:
+*                        通用元素选择器，匹配任何元素
+E                        标签选择器，匹配所有使用E标签的元素
+.info                    class选择器，匹配所有class属性中包含info的元素
+#footer                  id选择器，匹配所有id属性等于footer的元素
+E,F                      多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔
+E F                      后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔
+E > F                    子元素选择器，匹配所有E元素的子元素F
+E + F                    毗邻元素选择器，匹配紧随E元素之后的同级元素F （只匹配第一个）
+E ~ F                    同级元素选择器，匹配所有在E元素之后的同级F元素
+E[att='val']             属性att的值为val的E元素 （区分大小写）
+E[att^='val']            属性att的值以val开头的E元素 （区分大小写）
+E[att$='val']            属性att的值以val结尾的E元素 （区分大小写）
+E[att*='val']            属性att的值包含val的E元素 （区分大小写）
+E[att1='v1'][att2*='v2'] 属性att1的值为v1，att2的值包含v2 （区分大小写）
+E:contains('xxxx')       内容中包含xxxx的E元素
+E:not(s)                 匹配不符合当前选择器的任何元素
 '''         #— — CSS选择器的常见语法 — —
 # CSS定位元素
 driver.find_element(By.CSS_SELECTOR,'.s_ipt').send_keys("Selenium")
